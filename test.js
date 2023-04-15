@@ -41,8 +41,27 @@ function faturamento() {
   console.log(`Número de dias com faturamento acima da média: ${diasAcimaDaMedia}`);
 }
 
+function faturamentoDosEstados () {
+  const faturamentoPorEstado = {
+    'SP': 67836.43,
+    'RJ': 36678.66,
+    'MG': 29229.88,
+    'ES': 27165.48,
+    'Outros': 19849.53
+  };
+
+  const valorTotalMensal = Object.values(faturamentoPorEstado).reduce((acc, valor) => acc + valor, 0);
+
+  const percentualPorEstado = {};
+  for (const [estado, valor] of Object.entries(faturamentoPorEstado)) {
+    percentualPorEstado[estado] = (valor / valorTotalMensal) * 100;
+  }
+  return percentualPorEstado;
+}
+
 console.log(calculaSoma());
 console.log(fibonacci(34));
 console.log(fibonacci(33));
 console.log(reverse("): tegraT ad oiráigatse ovon siam o é nairB"));
 faturamento();
+console.table(faturamentoDosEstados());
