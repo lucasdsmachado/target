@@ -25,7 +25,24 @@ function reverse(str) {
   return reversed;
 }
 
+function faturamento() {
+  const fs = require('fs');
+  const data = fs.readFileSync('./dados.json', 'utf-8');
+  const json = JSON.parse(data);
+
+  const diasUteis = json.filter(dia => dia.valor > 0);
+  const mediaMensal = diasUteis.reduce((acc, dia) => dia.valor + acc, 0) / diasUteis.length;
+  const menorValor = Math.min(...diasUteis.map(dia => dia.valor));
+  const maiorValor = Math.max(...diasUteis.map(dia => dia.valor));
+  const diasAcimaDaMedia = diasUteis.reduce((acc, dia) => dia.valor > mediaMensal ? acc + 1 : acc, 0);
+
+  console.log(`Menor valor de faturamento ocorrido em um dia do mês: ${menorValor}`);
+  console.log(`Maior valor de faturamento ocorrido em um dia do mês: ${maiorValor}`);
+  console.log(`Número de dias com faturamento acima da média: ${diasAcimaDaMedia}`);
+}
+
 console.log(calculaSoma());
 console.log(fibonacci(34));
 console.log(fibonacci(33));
 console.log(reverse("): tegraT ad oiráigatse ovon siam o é nairB"));
+faturamento();
