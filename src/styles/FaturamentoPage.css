@@ -1,0 +1,22 @@
+.faturamento-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.estatisticas {
+  font-size: 18px;
+  color: #333;
+}
+
+.estatisticas p {
+  margin: 10px 0;
+}
