@@ -42,4 +42,8 @@ Escreva um programa que inverta os caracteres de uma string.
 **IMPORTANTE:**
 
 - A string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código.
-- Evite usar funções prontas, como, por exemplo, `reverse`.
+- Evite usar funções prontas, como, por exemplo, reverse.
+
+---
+
+A página com o desafio pode ser vista no site: [https://lucasdsmachado.github.io/target/](https://lucasdsmachado.github.io/target/)
